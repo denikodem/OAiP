@@ -1,0 +1,62 @@
+{
+    "data1": {
+        "age": 20,
+        "phone": "+73539215818",
+        "name": "Anna",
+        "city": "Moscow"
+    },
+    "data2": {
+        "age": 25,
+        "phone": "+73539215819",
+        "name": "Ivan",
+        "city": "Moscow"
+    },
+    "data3": {
+        "age": 22,
+        "phone": "+73539215820",
+        "name": "Olga",
+        "city": "Vienna"
+    },
+    "data4": {
+        "age": 30,
+        "phone": "+73539215821",
+        "name": "Petr",
+        "city": "Moscow"
+    },
+    "data5": {
+        "age": 27,
+        "phone": "+74443332211",
+        "name": "Irina",
+        "city": "Novosibirsk"
+    },
+	"data6": {
+        "age": 32,
+        "phone": "+79991112233",
+        "name": "Viktor",
+        "city": "Moscow"
+    },
+    "data7": {
+        "age": 24,
+        "phone": "+79992223344",
+        "name": "Ekaterina",
+        "city": "Sochi"
+    },
+    "data8": {
+        "age": 29,
+        "phone": "+79993334455",
+        "name": "Roman",
+        "city": "Moscow"
+    },
+    "data9": {
+        "age": 27,
+        "phone": "+79994445566",
+        "name": "Tatiana",
+        "city": "Kazan"
+    },
+    "data10": {
+        "age": 31,
+        "phone": "+79995556677",
+        "name": "Alexey",
+        "city": "Moscow"
+    }
+}
