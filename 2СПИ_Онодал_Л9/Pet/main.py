@@ -41,5 +41,4 @@ def main():
     game.end_game()
 if __name__ == "__main__":
     main()
-
-input("Нажмите Enter для выхода...")
+    input("Нажмите Enter для выхода...")
