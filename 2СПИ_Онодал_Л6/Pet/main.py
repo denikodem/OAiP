@@ -1,5 +1,6 @@
-from Tamagotchi import OutputText
-obj = OutputText()
+from Tamagotchi import InteractionsPet
+obj = InteractionsPet()
 
 if __name__ == "__main__":
-    obj.game_over()
+    obj.start_game()
+    obj.show_stats()

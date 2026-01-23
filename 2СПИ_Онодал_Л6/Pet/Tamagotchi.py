@@ -17,6 +17,7 @@ class StatsPet:
         self.difficulty = 1
         self.score = 0
 
+
 class OutputText:
 
     @staticmethod
@@ -43,41 +44,38 @@ class OutputText:
             """
         )
 
-    def game_over(self):
-        print(
-            f"""
-            ИГРА ОКОНЧЕНА, ВЫ ПРОИГРАЛИ
-            Ваше счет: {self.score}
-            """
-        )
 
 class InteractionsPet(StatsPet):
 
-    def give_name(self):
-        self.name = str(input(">>> "))
-        print(f"Вы назвали своего питомца именем {self.name}")
+    def start_game(self):
+        self.name = str(input("Имя питомца?\n>>> "))
+        self.difficulty = int(input("Сложность 1-3\n>>> "))
+        print(f"Вы назвали своего питомца именем: {self.name}")
+        print(f"Вы выбрали сложность игры: {self.difficulty}")
 
     def show_stats(self):
-        return {
+        print({
         "Имя": self.name,
         "Счастье": self.happiness,
         "Здоровье": self.health,
         "Голод": self.hunger,
         "Обезвоживание": self.dehydration,
         "Сонливость": self.sleepiness,
-        }
+        "Счет игры": self.score
+        })
 
     def feed_pet(self):
         self.hunger -= 3 * self.difficulty
         self.dehydration += self.difficulty
         self.sleepiness += self.difficulty
-        self.score += 1
+        self.end_turn()
         print(f"{self.name} поел")
 
     def drink_pet(self):
         self.dehydration -= 3 * self.difficulty
         self.hunger += self.difficulty
         self.sleepiness += self.difficulty
+        self.end_turn()
         print(f"{self.name} попил")
 
     def sleep_pet(self):
@@ -85,6 +83,7 @@ class InteractionsPet(StatsPet):
         self.hunger += self.difficulty
         self.dehydration += self.difficulty
         self.happiness -= self.difficulty
+        self.end_turn()
         print(f"{self.name} поспал")
 
     def play_pet(self):
@@ -92,4 +91,38 @@ class InteractionsPet(StatsPet):
         self.hunger += self.difficulty
         self.dehydration += self.difficulty
         self.sleepiness += self.difficulty
+        self.end_turn()
         print(f"{self.name} поиграл")
+
+    def end_turn(self):
+        self.score += 1
+        self.health_check()
+        self.check_stats()
+
+    def health_check(self):
+        if self.hunger == 10:
+            self.health -= 1
+        if self.dehydration == 10:
+            self.health -= 1
+        if self.sleepiness == 10:
+            self.health -= 1
+        if self.happiness == 0:
+            self.health -= 1
+        if self.health <= 0:
+            self.game_over()
+
+    def check_stats(self):
+        self.hunger = max(0, min(10, self.hunger))
+        self.dehydration = max(0, min(10, self.dehydration))
+        self.sleepiness = max(0, min(10, self.sleepiness))
+        self.happiness = max(0, min(10, self.happiness))
+
+    def game_over(self):
+        print(
+            f"""
+            ИГРА ОКОНЧЕНА, ВЫ ПРОИГРАЛИ
+            Ваш счет: {self.score}
+            """
+        )
+        #self.running = 0
+        #input("Нажмите Enter для выхода...")
