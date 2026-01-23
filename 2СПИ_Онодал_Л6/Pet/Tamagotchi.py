@@ -15,7 +15,9 @@ class StatsPet:
         self.dehydration = 0
         self.sleepiness = 0
         self.difficulty = 1
+
         self.score = 0
+        self.WINSCORE = 50
 
 
 class InteractionsPet(StatsPet):
@@ -84,22 +86,20 @@ class InteractionsPet(StatsPet):
         if self.happiness <= 0:
             self.health -= 1
 
-
     def check_stats(self):
         self.hunger = max(0, min(10, self.hunger))
         self.dehydration = max(0, min(10, self.dehydration))
         self.sleepiness = max(0, min(10, self.sleepiness))
         self.happiness = max(0, min(10, self.happiness))
 
-
     def end_game(self):
         if self.health <= 0:
             print(
-            f"""
+                f"""
             ИГРА ОКОНЧЕНА, ВЫ ПРОИГРАЛИ
             Ваш счет: {self.score}
             """)
-        elif self.score >= 50:
+        elif self.score >= self.WINSCORE:
             print(f"""
             ПОЗДРАВЛЯЕМ! ВЫ ВЫИГРАЛИ!
             Ваш счет достиг 50 и вы прошли игру!\n\n""")
@@ -129,4 +129,4 @@ class InteractionsPet(StatsPet):
 *    Помните каждое действие с питомцем может как дать нужное значение так и забрать другое *
 *    Вы победите если достигните 50 очков счета                                             *
 *********************************************************************************************"""
-        )
+              )

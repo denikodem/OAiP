@@ -1,4 +1,5 @@
 from Tamagotchi import InteractionsPet
+
 obj = InteractionsPet()
 
 if __name__ == "__main__":
@@ -6,7 +7,7 @@ if __name__ == "__main__":
     obj.start_game()
 
     while obj.health > 0:
-        if obj.score >= 50:
+        if obj.score >= obj.WINSCORE:
             break
         obj.show_stats()
         print("""        1 - Покормить
@@ -29,7 +30,6 @@ if __name__ == "__main__":
         else:
             print("Неверный выбор, попробуйте ещё раз")
             continue
-
 
     obj.end_game()
 
