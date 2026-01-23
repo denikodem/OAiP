@@ -32,7 +32,7 @@ def main():
 
         if choice in actions:
             actions[choice].execute(game)
-        elif choice == 5:
+        elif choice == "5":
             game.rules_game()
         else:
             print("Неверный выбор, попробуйте ещё раз")
