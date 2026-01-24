@@ -1,5 +1,3 @@
-from fastapi.params import Cookie
-
 from Button import (
     ButtonConfig,
     TogglerButton,
