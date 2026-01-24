@@ -22,7 +22,7 @@ class ButtonConfig:
         return f'''
         "Состояние кнопки": {self.toggle},
         "Размер кнопки": {self.scale},
-        "Тест кнопки": {self.text},
+        "Текст кнопки": {self.text},
         "Цвет кнопки": {self.color},
         '''
 
