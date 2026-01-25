@@ -18,8 +18,7 @@ class ButtonManager:
         }
 
     def run(self):
-        running = True
-        while running:
+        while True:
             choice = input("""
             Выберите действие с кнопкой:
             
@@ -32,7 +31,7 @@ class ButtonManager:
             
 >>>>""")
             if choice == "6":
-                running = not running
+                break
             elif choice == "5":
                 print(ButtonConfig.give_config(self.config))
             elif choice in self.buttons:
